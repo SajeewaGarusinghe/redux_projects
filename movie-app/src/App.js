@@ -12,9 +12,7 @@ function App() {
     <div className="app">
       <Router>
         <Header></Header>
-        <div className="container">
-          
-        </div>
+        <div className="container"></div>
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/movie/:imdbID" element={<MovieDetail />} />
