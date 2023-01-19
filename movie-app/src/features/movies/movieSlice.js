@@ -50,7 +50,7 @@ export const moviesSlice = createSlice({
   name: 'movies',
   initialState: initialMovieState,
   reducers: {
-    removedetails: (state) => {
+    removeDetails: (state) => {
       state.details = {};
     },
   },
@@ -76,7 +76,7 @@ export const moviesSlice = createSlice({
   },
 });
 
-export const { addMovies } = moviesSlice.actions;
+export const { removeDetails } = moviesSlice.actions;
 export const getAllMovies = (state) => state.movies.movies;
 export const getAllShows = (state) => state.movies.shows;
 export const getDetails = (state) => state.movies.details;

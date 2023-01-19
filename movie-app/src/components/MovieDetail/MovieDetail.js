@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import {
   fetchAsyncDetails,
   getDetails,
+  removeDetails,
 } from '../../features/movies/movieSlice';
 import './MovieDetail.scss';
 
@@ -15,7 +16,10 @@ const MovieDetail = () => {
 
   useEffect(() => {
     dispatch(fetchAsyncDetails(imdbID));
-  }, [imdbID,dispatch]);
+    return () => {
+      dispatch(removeDetails());
+    };
+  }, [imdbID, dispatch]);
 
   return (
     <div className="movie-section">
@@ -71,7 +75,6 @@ const MovieDetail = () => {
       )}
     </div>
   );
-
 };
 
 export default MovieDetail;
