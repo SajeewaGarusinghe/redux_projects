@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import MovieListing from '../MovieListing/MovieListing';
+import MovieSlick from '../MovieListing/MovieSlick'
 import './Home.scss';
 
 import { useDispatch } from 'react-redux';
@@ -21,6 +22,9 @@ const Home = () => {
     <div>
       <div className="banner-img"></div>
       <MovieListing />
+
+      <MovieSlick/>
+
     </div>
   );
 };

@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { getAllMovies, getAllShows } from '../../features/movies/movieSlice';
 import MovieCard from '../MovieCard/MovieCard';
+import Slider from "react-slick";
+import MovieSlick from './MovieSlick'
 import './MovieListing.scss';
 
 const MovieListing = () => {
@@ -32,17 +34,18 @@ const MovieListing = () => {
         <h3>{shows.Error}</h3>
       </div>
     );
-  // console.log('MovieListing');
-  // console.log(movies);
+
+
+
   return (
     <div className="movie-wrapper">
       <div className="movie-list">
         <h2>Movies</h2>
-        <div className="movie-container">{renderMovies}</div>
+        <div className="movie-container"><MovieSlick>{renderMovies}</MovieSlick></div>
       </div>
       <div className="show-list">
         <h2>Shows</h2>
-        <div className="movie-container">{renderShows}</div>
+        <div className="movie-container"><MovieSlick>{renderShows}</MovieSlick></div>
       </div>
     </div>
   );
