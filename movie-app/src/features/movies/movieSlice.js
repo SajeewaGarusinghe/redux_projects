@@ -10,10 +10,10 @@ const initialMovieState = {
 
 export const fetchAsyncMovies = createAsyncThunk(
   'movies/fetchAsyncMovies',
-  async () => {
-    const movieText = 'harry';
+  async (term) => {
+    // const movieText = 'harry';
     const response = await movieApi
-      .get(`?apiKey=${APIKey}&s=${movieText}&type=movie`)
+      .get(`?apiKey=${APIKey}&s=${term}&type=movie`)
       .catch((err) => {
         console.log('Err : ', err);
       });
@@ -23,10 +23,10 @@ export const fetchAsyncMovies = createAsyncThunk(
 );
 export const fetchAsyncShows = createAsyncThunk(
   'movies/fetchAsyncShows',
-  async () => {
-    const movieText = 'friends';
+  async (term) => {
+    // const movieText = 'friends';
     const response = await movieApi
-      .get(`?apiKey=${APIKey}&s=${movieText}&type=movie`)
+      .get(`?apiKey=${APIKey}&s=${term}&type=series`)
       .catch((err) => {
         console.log('Err : ', err);
       });
