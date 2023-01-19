@@ -14,6 +14,7 @@ const MovieCard = ({ data }) => {
         <div className="card-info">
           <h4>{data.Title}</h4>
           <p>{data.Year}</p>
+ 
         </div>
       </div>
       </Link>
